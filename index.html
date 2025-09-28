@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Developer (GD) Coin</title>
+  <meta name="description" content="Game Developer (GD) — professional meme coin for web3 builders with livestream integration." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/gd-logo-clean.png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="left">
+      <img src="assets/gd-logo-clean.png" alt="GD Logo" class="logo" />
+      <span class="brand">Game Developer</span>
+    </div>
+    <nav class="right">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a class="btn btn-primary" href="#buy">Buy GD</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main class="hero">
+    <!-- Centered logo (no text, transparent background) -->
+    <img src="assets/gd-logo-clean.png" alt="GD Logo" class="mark-center" />
+
+    <!-- Contract Address exactly centered -->
+    <div class="badge">
+      Contract Address: <strong id="contract">Unknown</strong>
+    </div>
+
+    <h1><span class="accent">GD</span> — Vibe Coding for Builders</h1>
+    <p class="sub">
+      Professional web development for CTOs and blockchain projects — with on-chain livestreaming,
+      community fee donations, and meme-grade vibes.
+    </p>
+    <div class="cta">
+      <a class="btn glow" href="#get-started">Get Started</a>
+      <a class="btn" href="https://x.com/i/communities/1971919078882529319" target="_blank" rel="noopener noreferrer">Join Community</a>
+      <a class="btn outline" href="#watch">Watch Live</a>
+    </div>
+  </main>
+
+  <!-- SECTIONS -->
+  <section id="about" class="panel">
+    <h2>Why GD?</h2>
+    <p>We build fast, clean, and battle-tested sites for web3 projects, with optional livestream overlays and interactive command triggers.</p>
+    <ul class="features">
+      <li>⚡ Rapid builds & ship-ready UX</li>
+      <li>🎮 Stream overlays & chat commands</li>
+      <li>🔒 Wallet & contract ready sections</li>
+      <li>🌐 Deployed free on GitHub Pages</li>
+    </ul>
+  </section>
+
+  <section id="services" class="panel cards">
+    <article class="card">
+      <h3>Landing Pages</h3>
+      <p>Polished, responsive, and performant sites that convert visitors into holders.</p>
+    </article>
+    <article class="card">
+      <h3>Stream Overlays</h3>
+      <p>Plug-and-play overlays for Pump Fun livestreams with fun animations.</p>
+    </article>
+    <article class="card">
+      <h3>Analytics</h3>
+      <p>Hooks for on-chain stats, holders, and donation tracking (coming soon).</p>
+    </article>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Game Developer (GD). Built with ❤️ and purple-yellow energy.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

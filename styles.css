@@ -1,0 +1,113 @@
+/* Base */
+* { box-sizing: border-box; }
+:root {
+  --bg: #0b0b12;
+  --panel: #10121a;
+  --muted: #a3a3b2;
+  --text: #e7e7f7;
+  --accent: #a78bfa;     /* purple */
+  --accent-2: #fde047;   /* yellow */
+  --accent-3: #8b5cf6;
+  --ring: rgba(167,139,250,0.45);
+}
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(167,139,250,0.15), transparent 70%),
+              radial-gradient(1000px 500px at 80% 10%, rgba(253,224,71,0.10), transparent 60%),
+              var(--bg);
+  overflow-x: hidden;
+}
+
+/* Animated background canvas sits underneath */
+#bg { position: fixed; inset: 0; z-index: -1; }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 28px;
+  background: linear-gradient(to bottom, rgba(11,11,18,0.9), rgba(11,11,18,0.4), transparent);
+  backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav .left { display: flex; align-items: center; gap: 12px; }
+.logo { width: 40px; height: 40px; object-fit: contain; }
+.brand { font-weight: 800; letter-spacing: 0.3px; }
+.nav .right { display: flex; gap: 18px; align-items: center; }
+.nav a { color: var(--text); text-decoration: none; opacity: 0.9; }
+.nav a:hover { opacity: 1; }
+.btn {
+  padding: 10px 16px; border-radius: 12px; text-decoration: none; display: inline-flex; gap: 8px;
+  border: 1px solid rgba(255,255,255,0.12); color: var(--text); transition: 200ms ease;
+  background: rgba(255,255,255,0.02);
+}
+.btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.22); }
+.btn-primary { background: linear-gradient(90deg, var(--accent-3), var(--accent-2)); border: none; color: #0b0b12; font-weight: 800; }
+.btn.outline { background: transparent; }
+.btn.glow { box-shadow: 0 0 0 0 var(--ring); animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--ring); }
+  70% { box-shadow: 0 0 0 16px rgba(167,139,250,0); }
+  100% { box-shadow: 0 0 0 0 rgba(167,139,250,0); }
+}
+
+/* Hero */
+.hero { 
+  max-width: 1100px; margin: 96px auto 40px; padding: 0 20px; 
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+/* Centered logo (no background) */
+.mark-center {
+  display: block;
+  margin: 0 auto 16px;
+  width: clamp(96px, 14vw, 180px);
+  height: auto;
+  animation: floaty 6s ease-in-out infinite;
+}
+/* Contract Address badge centered precisely */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  background: rgba(167,139,250,0.12);
+  border: 1px solid rgba(167,139,250,0.35);
+  color: var(--muted);
+  font-weight: 600;
+  line-height: 1;
+}
+.hero h1 { font-size: clamp(32px, 4.8vw, 64px); margin: 8px 0 14px; line-height: 1.05; letter-spacing: -0.6px; }
+.accent { background: linear-gradient(90deg, var(--accent-3), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sub { max-width: 860px; margin: 0 auto; color: var(--muted); font-size: 18px; }
+.cta { display: flex; gap: 12px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
+
+/* Panels */
+.panel {
+  max-width: 1100px; margin: 80px auto; padding: 28px; border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+.panel h2 { margin-top: 0; font-size: 28px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px; padding-left: 18px; color: var(--muted); }
+
+.cards { background: transparent; border: none; box-shadow: none; }
+.cards .card {
+  background: var(--panel); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px; padding: 20px; transition: transform 180ms ease, border-color 180ms ease;
+}
+.cards .card:hover { transform: translateY(-3px); border-color: rgba(253,224,71,0.35); }
+
+/* Footer */
+.footer { text-align: center; color: var(--muted); padding: 48px 16px 60px; }
+
+@keyframes floaty {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
